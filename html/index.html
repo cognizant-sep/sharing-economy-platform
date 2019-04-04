@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html>
-<body bgcolor="yellow">
-<center>
-<br><br><br>
-<h1>WELCOME TO MR. MOJO</h1><br>
-<p>Tell us you want to buy or sell goods???</p>
 
-<form action="/action_page.php">
-  <select name="Vendor">
-    <option value="user">User</option>
-    <option value="vendor">Vendor</option>
-  </select>
-  <br><br><br><br><br><br>
+<title>
+Welcome
+</title>
 
-  <input type="submit" value="SURE???">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
 
-</form>
-</center>
-</body>
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div>
+ <div style="width: 700px; float:left; height:100px; margin:10px">
+ <h2 align="center">Buy</h2>
+ 
+ <div class="imgcontainer">
+    <img src="buyer.png" alt="Buyer" class="avatar" height="200" width="200">
+ </div>
+ 
+ <button type="submit" onclick="window.location.href = 'user_loginpage.html';">User Login</button>
+ <button type="submit" onclick="window.location.href = 'https://w3docs.com';">User Registration</button>
+ 
+ </div>
+ <div style="width: 700px; float:left; height:100px; margin:10px" >
+ <h2 align="center">Sell</h2>
+ 
+ <div class="imgcontainer">
+    <img src="seller.png" alt="Vendor" class="avatar" height="200" width="200">
+ </div>
+ <button type="submit" onclick="window.location.href = 'https://w3docs.com';">Vendor Login</button>
+ <button type="submit" onclick="window.location.href = 'https://w3docs.com';">Vendor Registration</button>
+ </div>
+ <br style="clear: left;" />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
