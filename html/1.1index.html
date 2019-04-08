@@ -1,58 +1,116 @@
 <!DOCTYPE html>
 <html>
-
-<title>
-Welcome
-</title>
-
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
+* {
+  box-sizing: border-box;
 }
 
-button {
-  background-color: #4CAF50;
+.columns {
+  float: left;
+  width: 50%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 8;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.price .headeru {
+  background-color: #ff8c19;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  font-size: 25px;
+}
+.price .headerv {
+  background-color: #9c6ff7;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .orange {
+  background-color: #ffb366;
+  font-size: 20px;
+}
+
+
+.button {
+  background-color: #4CAF50;
   border: none;
-  cursor: pointer;
-  width: 100%;
+  color: white;
+  padding: 20px 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius:10px
 }
-
-button:hover {
+.orange {
+  background-color: #ffb366;
+  font-size: 20px;
+}
+.violet {
+  background-color: #ccb3ff;
+  font-size: 20px;
+}
+.button:hover {
   opacity: 0.8;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
 }
-
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
 </style>
 </head>
-
 <body>
 
-<div>
- <div style="width: 700px; float:left; height:100px; margin:10px">
- <h2 align="center">Buy</h2>
- 
- <div class="imgcontainer">
-    <img src="buyer.png" alt="Buyer" class="avatar" height="200" width="200">
- </div>
- 
- <button type="submit" onclick="window.location.href = 'user_loginpage.html';">User Login</button>
- <button type="submit" onclick="window.location.href = 'https://w3docs.com';">User Registration</button>
- 
- </div>
- <div style="width: 700px; float:left; height:100px; margin:10px" >
- <h2 align="center">Sell</h2>
- 
- <div class="imgcontainer">
-    <img src="seller.png" alt="Vendor" class="avatar" height="200" width="200">
- </div>
- <button type="submit" onclick="window.location.href = 'https://w3docs.com';">Vendor Login</button>
- <button type="submit" onclick="window.location.href = 'https://w3docs.com';">Vendor Registration</button>
- </div>
- <br style="clear: left;" />
+<br>
+<h2 style="text-align:center">Welcome to Mr. MOJO Bazaar!!!</h2>
+
+
+<div class="columns">
+  <ul class="price">
+    <li class="headeru">Users</li>
+    <li class="grey">Existing User?</li>
+    <li class="grey"><a href="#" class="button orange">Log In</a></li>
+    <li class="grey">New User?</li>
+    <li class="grey"><a href="#" class="button orange">Sign up</a></li>
+    <li class="grey"></a></li>
+  </ul>
 </div>
+
+<div class="columns">
+  <ul class="price">
+   <li class="headerv">Vendors</li>
+    <li class="grey">Existing Seller?</li>
+    <li class="grey"><a href="#" class="button violet" >Log In</a></li>
+    <li class="grey">New Vendor?</li>
+    <li class="grey"><a href="#" class="button violet">Sign up</a></li>
+   <li class="grey"></a></li>
+  </ul>
+</div>
+
+
+</body>
 </html>
