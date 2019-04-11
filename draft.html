@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="css_style.css"/>
+<link rel="stylesheet" type="text/css" href="vendor_css.css"/>
+<script language="javascript " type="text/javascript">
+  function show(aval) {
+
+    if (aval == "Product") {
+    hi.style.display='inline-block';
+    // Form.fileURL.focus();
+    } 
+    else{
+    hi.style.display='none';
+    }
+  }
+</script>
+ 
+
+ <!--Vendor_UserId varchar2(15) NOT NULL,
+                FirstName varchar2(50) NOT NULL,
+                LastName varchar2(50) NOT NULL,
+                Age Number(2) NOT NULL,
+                Gender varchar2(5) NOT NULL,
+                ContactNumber Number(10) NOT NULL,
+               	Vendor_id NUMBER(10),
+               	Address VARCHAR2 (20),
+		City varchar2(50) NOT NULL,
+		Zip_Code varchar2(10) NOT NULL,
+		Landline varchar2(10) NOT NULL,
+		Email varchar2(50) NOT NULL,
+		Other_Contact_info varchar2(100) NOT NULL,-->
+ 
+    <label for="type">Type</label>
+    <select name="types" placeholder="" onchange="show(this.options[this.selectedIndex].text)"> 
+            <option label="Product">Product</option>
+            <option label="Service">Service</option>
+    </select>
+
+  <div  id="hi" style="display:none">
+     <label for="Title">Product type</label>
+    <select name="product" placeholder="Choose Product"> 
+            <option label="beds">Beds</option>
+            <option label="sofa">Sofa and loungers</option>
+            <option label="chair">Chairs</option>
+            <option label="tables">Tables</option>
+            <option label="wardrobes">Wardrobes</option>
+    </select>
+
+    <label for="Title">Title</label>
+    <input type="text" placeholder="Enter the product/service" name="Title" >
+
+    <label for="dime">Dimensions</label>
+    <input type="text" placeholder="length*breadth*height" name="dime" >
+    
+    <label for="color">Color</label>
+    <input type="text" placeholder="Enter color" name="color" >    
+
+    <label for="contactnumber">Material Used</label>
+    <input type="text" placeholder="Enter Contact Number" name="contactNum" >
+
+    
+    <label for="color">Color</label>
+    <input type="text" placeholder="Enter color" name="color" >   
+</div>
+    
+
+</html>
