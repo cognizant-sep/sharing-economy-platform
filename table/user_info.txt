@@ -1,0 +1,10 @@
+create table  user_info
+(
+ fname varchar2(50)not null,
+ lname varchar2(50)not null,
+ age number(2)not null,
+ gender varchar2(10),
+ contact_no number(10),
+ user_id varchar2(15)not null unique,
+ password varchar2(15)not null
+);

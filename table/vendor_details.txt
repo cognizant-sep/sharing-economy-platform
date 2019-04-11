@@ -1,0 +1,18 @@
+create table vendor_DETAILS
+(
+		Vendor_UserId varchar2(15) NOT NULL,
+                FirstName varchar2(50) NOT NULL,
+                LastName varchar2(50) NOT NULL,
+                Age Number(2) NOT NULL,
+                Gender varchar2(5) NOT NULL,
+                ContactNumber Number(10) NOT NULL,
+               	Vendor_id NUMBER(10),
+               	Address VARCHAR2 (20),
+		City varchar2(50) NOT NULL,
+		Zip_Code varchar2(10) NOT NULL,
+		Landline varchar2(10) NOT NULL,
+		Email varchar2(50) NOT NULL,
+		Other_Contact_info varchar2(100) NOT NULL,
+	        CONSTRAINT FK_VENDORUSERID FOREIGN KEY (Vendor_UserId) REFERENCES VENDOR_INFO1 (Vendor_UserId) 
+
+); 
