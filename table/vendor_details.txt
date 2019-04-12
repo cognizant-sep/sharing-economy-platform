@@ -1,4 +1,4 @@
-create table vendor_DETAILS
+create table vendor_DETAILS1
 (
 		Vendor_UserId varchar2(15) NOT NULL,
                 FirstName varchar2(50) NOT NULL,
@@ -13,6 +13,6 @@ create table vendor_DETAILS
 		Landline varchar2(10) NOT NULL,
 		Email varchar2(50) NOT NULL,
 		Other_Contact_info varchar2(100) NOT NULL,
-	        CONSTRAINT FK_VENDORUSERID FOREIGN KEY (Vendor_UserId) REFERENCES VENDOR_INFO1 (Vendor_UserId) 
+	        CONSTRAINT FK_VENDOR_ID FOREIGN KEY (Vendor_UserId) REFERENCES VENDOR_INFO1 (Vendor_UserId) 
 
 ); 
