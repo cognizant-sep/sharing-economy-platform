@@ -11,6 +11,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.dao.dataconn;
 
 
@@ -26,28 +28,27 @@ public class LoginFilter implements Filter {
         {
         	
                         Connection con = dataconn.connect();
-                        String query = "select * from user_info where user_id=? and password=?";
-                        PreparedStatement ps = con.prepareStatement(query);
-                        
-                        ResultSet rs = ps.executeQuery();
                         String uid = request.getParameter("uid");
                         String pass =request.getParameter("psw");
+                        String query = "select * from user_info";
+                        PreparedStatement ps = con.prepareStatement(query);
+                        ResultSet rs = ps.executeQuery();
                         int flag=0;
                         while(rs.next())
-                        {
-                                        if(rs.getString("user_id").equals(uid) && rs.getString("password").equals(pass))
-                                        {
-
-                                            RequestDispatcher rd = request.getRequestDispatcher("views/u_submit.html");
-                                            rd.forward(request, response);
-                                            flag=1;
-                                        }
+                        {	
+                        		if(rs.getString(6).equals(uid) && rs.getString(7).equals(pass))
+                                {
+                        			request.setAttribute("userid", uid);
+                        			request.getRequestDispatcher("u_submit.jsp?msge1=Successfully logged in").forward(request, response);
+                                    flag=1;
+                                }
+                      
+                        	
                         }
                         if (flag==0) {
 
-                            RequestDispatcher rd = request.getRequestDispatcher("index.html?errmsg2=INVALID USER...!!!!!!!!!!!");
-                            rd.forward(request, response);
-                            	
+                        	request.getRequestDispatcher("index.jsp?msge4=invalid user")
+    						.forward(request, response);
 						}
 	}catch (Exception e) {
 		e.printStackTrace();

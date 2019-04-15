@@ -2,17 +2,6 @@
 * {
   box-sizing: border-box;
 }
-.al1
-{
-	text-color:red;
-}
-
-#errmsg
-{
-	text-align:center;
-	font-size:300%;
-	color:red;
-}
 
 /* Style the body */
 body {
@@ -26,7 +15,6 @@ body {
   text-align: center;
   position:relative;
   background-image: url(images/main_12.jpg);
-  
    z-index: 0;
    background-size:cover;
 
@@ -45,6 +33,7 @@ body {
   position: fixed;
   top: 0;
   width:100%;
+  z-index: 100;
 }
 
 /* Style the navigation bar links */
@@ -106,6 +95,7 @@ font-family:"";
   padding: 20px;
 }
 
+
 /* Fake image, just for this example */
 .fakeimg {
   
@@ -118,7 +108,7 @@ font-family:"";
 .footer {
   padding: 1px;
   text-align: center;
-  background: #ddd;
+  background: #ddd;  
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */

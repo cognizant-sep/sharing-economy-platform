@@ -34,4 +34,23 @@
     <filter-name>LoginFilter</filter-name>
     <url-pattern>/LoginFilter.do</url-pattern>
   </filter-mapping>
+  <filter>
+    <filter-name>V_SignUpFilter</filter-name>
+    <filter-class>Vendor_Filters.V_SignUpFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>V_SignUpFilter</filter-name>
+    <url-pattern>/V_SignUpFilter.do</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>V_LoginFilter</filter-name>
+    <filter-class>Vendor_Filters.V_LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>V_LoginFilter</filter-name>
+    <url-pattern>/V_LoginFilter.do</url-pattern>
+  </filter-mapping>
+  
+  
 </web-app>

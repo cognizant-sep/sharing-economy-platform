@@ -1,31 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="css_style.css"/>
 <script  language="javascript">
-  function openForm() 
-  {
+  function openForm() {
   document.getElementById("myForm").style.display = "inline";
   }
-function closeForm() 
-{
+function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-
 </script>
-
-
-
 <title>MR. MOJO BAZZAR </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 </style>
 </head>
+<%
+String unm = request.getAttribute("userid").toString();
+request.getSession().setAttribute("uname",unm);
+%>
+
+
 <body>
 
 <div class="header">
@@ -36,6 +34,8 @@ function closeForm()
   <a href="#">Home</a>
   <a href="#">Departments</a>
   <a href="#">Top picks</a>
+ 
+
   
 </div>
 
@@ -44,44 +44,28 @@ function closeForm()
      <!--<a href="#" class="right open-button" onclick="openForm()" >Login</a>
 <div class="form-popup" id="myForm">
   -->
-  <form action="LoginFilter.do" class="form-container" type="post">
-  
-    
-   
+  <!--<form action="" class="form-container">
 <h2>Login </h2>
     <label for="uid"><b>User ID</b></label>
     <input type="text" placeholder="Enter User ID" name="uid" required>
-
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
     <button type="submit" class="btn">Login</button>
-   
-    <a href="registration.jsp">
-    <button type="button" class="btn user" onclick="closeForm()">New User?</button>
-    </a>
+    <button type="button" class="btn user" onclick=" location.href='user_register.html'">New User?</button>
      <!--<a style="text-decoration: none;" href="" color="black" ><center> Old Vendor? Login here!</center></a>
-     -->
-     <a href="vendor_login.jsp">
-     <button type="button" class="btn vendor" onclick=" closeForm()">Existing Vendor?</button>
-     </a>
-     <a href="vendor_registration.jsp">
-     <button type="button" class="btn vendor" onclick=" closeForm()">New Vendor?</button>
-     </a>
-  </form>
+      <button type="button" class="btn vendor" formtarget="_self" onclick=" location.href='vendor_login.html'">Existing Vendor?</button>
+     <button type="button" class="btn vendor" onclick=" location.href='vendor_register.html'">New Vendor?</button>
+  </form>-->-->
+
+  <h6>hi USER!!!</h6>
+  Welcome UserId: <Strong><h1><font color="Green"><%=unm %></font></h1></Strong>
+    
 
   <h4>About Us</h4>
   <h4>Contact Us</h4>
   <h4>Help & Support</h4>
   </div>
   <div class="main">
-  <div class="al1"> <font color="red"><h3> ${param.msg}</font></h3></div>
-  <div class="al1"><font color="red"> <h3> ${param.errmsg2}</font></h3></div>
-  <div class="al1"><font color="red"> <h3> ${param.errmsg4}</font></h3></div>
-  <div class="al1"> <font color="red"><h3> ${param.errmsg3}</font></h3></div>
-
-  <div class="al1"> <h3> ${param.msge2}</h3></div>
-  <div class="al1"> <h3> ${param.msge3}</h3></div>
-  <div class="al1"> <h3> ${param.msge4}</h3></div>
     <h2>HI THERE!!! Looking for a Home Makeover?</h2>
     <h5>Checkout our new range of Home Decors</h5>
      <img src="images/5.jpg" style="width:170px;height:145px;">
@@ -96,7 +80,7 @@ function closeForm()
        <img src="images/14.jpg" style="width:170px;height:145px;">
        <img src="images/15.jpg" style="width:170px;height:145px;">
        <img src="images/16.jpg" style="width:170px;height:145px;">
-    <p>Here at Mr.Mojo Bazzar we promise happy furniture for you. Fulfilling all the needs of your dream house.  </p>
+    <h5>Here at Mr.Mojo Bazzar we promise happy furniture for you. Fulfilling all the needs of your dream house.  </h5>
     
 <br>
     <h2>Beds</h2>

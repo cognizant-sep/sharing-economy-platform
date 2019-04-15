@@ -82,9 +82,6 @@ header {
      font-size: 100%; 
      vertical-align: baseline;
 }
-.h{
-  background-image:url(images/40.jpg);
-}
 G1 {                                         
     margin-left: 70px; 
     font-weight: bold ; 
@@ -103,9 +100,9 @@ G1 {
 }
 body{
  
-  background-size: cover;      
+background-size:cover; 
+background-image: linear-gradient(rgba(50,62,67,67), rgba(192,192,192,0.3)),url('images/44.jpg');
 background-repeat: no-repeat;
-background: linear-gradient(rgba(192,192,192,0.3), rgba(192,192,192,0.3)),url('images/41.jpg');
 }
 label{
   color:white;
@@ -185,11 +182,11 @@ position:absolute;
 
     <header>
 <br>
-    <h1>User Registration Form</h1>
-    <div> <h2><font color="red">${param.errmsg}</font></h2></div>
-    <p><font color="dark green">Please fill in this form to create an account with Mojo Bazzar.</font></p>
+<div> <h2> <font color="red">${param.errmsg1}</h2></font></div>
+    <h1>Vendor Registration Form</h1>
+    <p>Please fill in this form to create an account with Mojo Bazzar.</p>
     </header><br>
-<form name="RegForm" action="SignUpFilter.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
+<form name="RegForm" action="V_SignUpFilter.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
   <div class="container">
     <label for="fname">First Name</label>
     <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" >
@@ -224,8 +221,7 @@ position:absolute;
     <div class="clearfix">
      <button type="submit" class="signupbtn" onclick="return G1()"><b>Sign Up</b></button>
       <button type="reset" class="cancelbtn"><b>Reset</b></button>
-     
-   
+ 
     </div>
   </div>
 </form>

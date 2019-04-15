@@ -82,9 +82,6 @@ header {
      font-size: 100%; 
      vertical-align: baseline;
 }
-.h{
-  background-image:url(images/40.jpg);
-}
 G1 {                                         
     margin-left: 70px; 
     font-weight: bold ; 
@@ -103,9 +100,9 @@ G1 {
 }
 body{
  
-  background-size: cover;      
+background-size:cover; 
+background-image: linear-gradient(rgba(50,62,67,67), rgba(192,192,192,0.3)),url('images/40.jpg');
 background-repeat: no-repeat;
-background: linear-gradient(rgba(192,192,192,0.3), rgba(192,192,192,0.3)),url('images/41.jpg');
 }
 label{
   color:white;
@@ -159,13 +156,13 @@ button:hover {
 }
 /* Add padding to container elements */
 .container {
+    top:250px;
   width:50%;
   left:25%;
 position:absolute;
   padding: 20px;
   background: black;
-  opacity:0.78;
-  
+  opacity:0.8;
 }
 /* Clear floats */
 .clearfix::after {
@@ -184,48 +181,22 @@ position:absolute;
 <body  >
 
     <header>
-<br>
-    <h1>User Registration Form</h1>
-    <div> <h2><font color="red">${param.errmsg}</font></h2></div>
-    <p><font color="dark green">Please fill in this form to create an account with Mojo Bazzar.</font></p>
+<br><br><br><br><br>
+ <div> <h2> ${param.msg1}</h2></div>
+    <h1>Vendor Login Form</h1>
+    <p>Please fill in this form to login to your account with Mojo Bazzar.</p>
     </header><br>
-<form name="RegForm" action="SignUpFilter.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
+<form name="RegForm" action="V_LoginFilter.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
   <div class="container">
-    <label for="fname">First Name</label>
-    <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" >
-
-       <label for="lname">Last Name</label>
-    <input type="text" placeholder="Enter Last Name" name="lname" >
-    
-    <label for="age">Age</label>
-    <input type="text" placeholder="Enter Age" name="age" >
-    
-     <label for="gender">Gender</label>
-   <select name="gender" placeholder="Gender"> 
-  <option label="Male">Male</option>
-  <option label="Female">Female</option>
-  <option label="Transgender">Others</option>
-</select>
-<label for="contactnumber">Contact Number</label>
-    <input type="text" placeholder="Enter Contact Number" name="contactNum" >
-    
-    <label for="uid">User ID</label>
-    <input type="text" placeholder="Enter User ID" name="uid">
-  
-    <label for="psw">Password</label>
-    <input type="password" placeholder="Enter password of minimum 8 characters" id="pass" name="password" minlength="8" >
-    
-   <!-- <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
-    
-
+       <label for="lname">Username</label>
+    <input type="text" name="username" placeholder="Username" required>
+     <label for="lname">Password</label>
+        <input type="password" name="password" placeholder="Password" required>
+       
     <div class="clearfix">
-     <button type="submit" class="signupbtn" onclick="return G1()"><b>Sign Up</b></button>
-      <button type="reset" class="cancelbtn"><b>Reset</b></button>
-     
-   
+     <button type="submit" class="signupbtn" onclick="return G1()"><b>Login</b></button>
+      <button type="reset" class="cancelbtn " onclick=" location.href='vendor_login.jsp'"><b>Return to home</b></button>
+ 
     </div>
   </div>
 </form>

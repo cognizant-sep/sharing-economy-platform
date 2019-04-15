@@ -1,7 +1,6 @@
-package Filters;
-
+package Vendor_Filters;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,10 +15,11 @@ import javax.servlet.ServletResponse;
 
 import com.dao.dataconn;
 
-import models.UserInfo;
-import services.Service_add;
 
-public class SignUpFilter implements Filter {
+import services.V_Service_add;
+import v_model.VendorInfo;
+
+public class V_SignUpFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -32,7 +32,7 @@ public class SignUpFilter implements Filter {
 		try {
 
 			Connection con = dataconn.connect();
-			String query = "select * from user_info";
+			String query = "select * from vendor_info";
 			PreparedStatement ps = con.prepareStatement(query);
 
 			ResultSet rs = ps.executeQuery();
@@ -54,14 +54,12 @@ public class SignUpFilter implements Filter {
 				String userId = request.getParameter("uid");
 				String password = request.getParameter("password");
 
-				UserInfo u = new UserInfo(fName, lName, age, contactNo, gender, userId, password);
-				Service_add.addUser(u);
-		/*		request.setAttribute("uid", userId);
-				request.setAttribute("password", password);*/
-				request.getRequestDispatcher("index.jsp?msg=Account Created successfully. Please Login")
+				VendorInfo u = new VendorInfo(fName, lName, age, gender,contactNo,userId,password);
+				V_Service_add.addUser(u);
+				request.getRequestDispatcher("vendor_login.jsp?msg1=Account Created successfully. Please Login")
 						.forward(request, response);
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("registration.jsp?errmsg=User Already Exists!");
+				RequestDispatcher rd = request.getRequestDispatcher("vendor_registration.jsp?errmsg1=User Already Exists!");
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {
