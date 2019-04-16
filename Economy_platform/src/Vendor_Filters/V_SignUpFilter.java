@@ -53,13 +53,14 @@ public class V_SignUpFilter implements Filter {
 
 				String userId = request.getParameter("uid");
 				String password = request.getParameter("password");
+				
 
 				VendorInfo u = new VendorInfo(fName, lName, age, gender,contactNo,userId,password);
 				V_Service_add.addUser(u);
-				request.getRequestDispatcher("vendor_login.jsp?msg1=Account Created successfully. Please Login")
+				request.getRequestDispatcher("vendor_login.jsp?msg2=Account Created successfully. Please Login")
 						.forward(request, response);
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("vendor_registration.jsp?errmsg1=User Already Exists!");
+				RequestDispatcher rd = request.getRequestDispatcher("vendor_registration.jsp?errmsg2=User Already Exists!");
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {

@@ -182,7 +182,7 @@ position:absolute;
 
     <header>
 <br>
-<div> <h2> <font color="red">${param.errmsg1}</h2></font></div>
+<div> <h2> <font color="red">${param.errmsg2}</h2></font></div>
     <h1>Vendor Registration Form</h1>
     <p>Please fill in this form to create an account with Mojo Bazzar.</p>
     </header><br>

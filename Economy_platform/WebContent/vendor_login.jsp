@@ -182,14 +182,14 @@ position:absolute;
 
     <header>
 <br><br><br><br><br>
- <div> <h2> ${param.msg1}</h2></div>
+ <div> <h2> <font color="red"> ${param.msg2}</font></h2></div>
     <h1>Vendor Login Form</h1>
     <p>Please fill in this form to login to your account with Mojo Bazzar.</p>
     </header><br>
 <form name="RegForm" action="V_LoginFilter.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
   <div class="container">
        <label for="lname">Username</label>
-    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="username" placeholder="Username"  required>
      <label for="lname">Password</label>
         <input type="password" name="password" placeholder="Password" required>
        

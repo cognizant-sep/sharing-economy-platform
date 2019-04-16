@@ -39,7 +39,7 @@ public class LoginFilter implements Filter {
                         		if(rs.getString(6).equals(uid) && rs.getString(7).equals(pass))
                                 {
                         			request.setAttribute("userid", uid);
-                        			request.getRequestDispatcher("u_submit.jsp?msge1=Successfully logged in").forward(request, response);
+                        			request.getRequestDispatcher("u_submit.jsp?msg1=Successfully logged in").forward(request, response);
                                     flag=1;
                                 }
                       
@@ -47,7 +47,7 @@ public class LoginFilter implements Filter {
                         }
                         if (flag==0) {
 
-                        	request.getRequestDispatcher("index.jsp?msge4=invalid user")
+                        	request.getRequestDispatcher("index.jsp?errmsg1=invalid user")
     						.forward(request, response);
 						}
 	}catch (Exception e) {

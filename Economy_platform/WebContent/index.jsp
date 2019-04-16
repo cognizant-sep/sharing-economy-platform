@@ -75,8 +75,7 @@ function closeForm()
   </div>
   <div class="main">
   <div class="al1"> <font color="red"><h3> ${param.msg}</font></h3></div>
-  <div class="al1"><font color="red"> <h3> ${param.errmsg2}</font></h3></div>
-  <div class="al1"><font color="red"> <h3> ${param.errmsg4}</font></h3></div>
+ <div class="al1"><font color="red"> <h3> ${param.errmsg1}</font></h3></div>
   <div class="al1"> <font color="red"><h3> ${param.errmsg3}</font></h3></div>
 
   <div class="al1"> <h3> ${param.msge2}</h3></div>
