@@ -28,13 +28,20 @@ create table vendor_details
 		Landline varchar2(10) NOT NULL,
 		Email varchar2(50) NOT NULL,
 		Other_Contact_info varchar2(100) NOT NULL,
-		vendor_userid varchar2(15) REFERENCES vendor_info(vendor_userid)
+		vendor_userid varchar2(15) REFERENCES vendor_info1(vendor_userid)
 )
 
-create table vendor_info
+create table vendor_info1
 (
-	vendor_userid varchar2(15) PRIMARY KEY,
-	password varchar2(15)not null
+	
+	      FName varchar2(50) NOT NULL,
+                LName varchar2(50) NOT NULL,
+                Age Number(2) NOT NULL,
+                Gender varchar2(10) NOT NULL,
+                ContactNum Number(10) NOT NULL,
+                Vendor_UserId varchar2(15)Primary key,
+                Password varchar2(15) NOT NULL
+	
 )
 
 create table  user_info
