@@ -44,7 +44,7 @@ create table vendor_info1
 	
 )
 
-create table  user_info
+create table user_info
 (
  fname varchar2(50)not null,
  lname varchar2(50)not null,
