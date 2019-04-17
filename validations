@@ -18,4 +18,23 @@
 {% endfor %}
 </select>
 
+//password
+function alphanumeric(txt) 
+{ 
+var letters = /^[0-9a-zA-Z]+$/; 
+if(txt.value.match(letters)) 
+{ 
+alert('Your registration is correct '); 
+document.form1.text1.focus(); 
+return true; 
+} 
+else 
+{ 
+alert('Please input alphanumeric characters only'); 
+return false; 
+} 
+}
 
+
+//email
+     'email' => 'required|email|unique:users,id,'.$user->id,
