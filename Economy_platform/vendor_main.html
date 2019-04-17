@@ -18,7 +18,6 @@
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 <script language="javascript " type="text/javascript">
-
 function G1()                                    
 { 
    
@@ -95,10 +94,7 @@ function G1()
          document.getElementById("product1formDivCheck").style.display = "none";
          document.getElementById("serviceformDivCheck").style.display = "none";
          document.getElementById("service1formDivCheck").style.display = "none";
-
-
         }
-
         if("2" == nameSelect.value){
             document.getElementById("serDivCheck").style.display = "block";
         }
@@ -110,11 +106,8 @@ function G1()
          document.getElementById("service1formDivCheck").style.display = "none";
         
         }
-
     }
-
 }
-
 function form1SelectCheck(nameSelect1)
 {
   		{
@@ -130,7 +123,6 @@ function form1SelectCheck(nameSelect1)
         }
         else{  document.getElementById("product1formDivCheck").style.display = "none";}
     }
-
 }
 function form2SelectCheck(nameSelect1)
 {
@@ -147,9 +139,7 @@ function form2SelectCheck(nameSelect1)
         }
         else{  document.getElementById("service1formDivCheck").style.display = "none";}
     }
-
 }
-
 </script>
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -378,6 +368,7 @@ hr{
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div id="apd">
+<form>
 <div class="container">
   <label for="">Choose what you offer:</label>
   <select id="getFname" onchange="typeSelectCheck(this);">
@@ -465,11 +456,13 @@ hr{
 </div>
 
 </div>
+</form>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
 
   <div id="epd">
+      <form>
       <div class="container">
   <label for="">Choose what you offer:</label>
   <select id="getFname" onchange="typeSelectCheck(this);">
@@ -551,7 +544,7 @@ hr{
 <input type="text" placeholder="Enter the new category..." >
 <button value="ad" type="submit" class="signupbtn" onclick="form2SelectCheck(this);"><b>Add</b></button>
 </div>
-
+</form>
 </div>
 </div>
 
