@@ -1,0 +1,21 @@
+ // validate first name
+   public static boolean validateFirstName( String firstName )
+   {
+      return firstName.matches( "[A-Z][a-zA-Z]*" );
+   } 
+   
+    // validate last name
+   public static boolean validateLastName( String firstName )
+   {
+      return firstName.matches( "[A-Z][a-zA-Z]*" );
+   } 
+   
+   
+   //age drop down
+   <select name="age">
+{% for age in range(18, 121) %}
+    <option value="{{ age }}">{{ age }}</option>
+{% endfor %}
+</select>
+
+
