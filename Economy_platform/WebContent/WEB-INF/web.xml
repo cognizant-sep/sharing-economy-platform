@@ -51,6 +51,25 @@
     <filter-name>V_LoginFilter</filter-name>
     <url-pattern>/V_LoginFilter.do</url-pattern>
   </filter-mapping>
+   
+    <filter>
+    <filter-name>V_Filter</filter-name>
+    <filter-class>Vendor_Filters.Vendor_details</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>V_Filter</filter-name>
+    <url-pattern>/Vendor_details.do</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>ProductFilter</filter-name>
+    <filter-class>P_Filter.ProductFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ProductFilter</filter-name>
+    <url-pattern>/ProductFilter.do</url-pattern>
+  </filter-mapping>
+   
+  
   
   
 </web-app>

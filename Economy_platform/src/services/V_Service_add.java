@@ -77,6 +77,45 @@ public static VendorInfo checkUser(String v_uid,String pwd) throws Exception
 	return ud;
 	
 }
+public static VendorInfo checkUser1() throws Exception
+{
+	VendorInfo ud =null;
+	
+	//try
+//	{
+	
+	 Connection con = dataconn.connect();
+     String query = "select * from vendor_info1";
+     PreparedStatement ps = con.prepareStatement(query);
+     ResultSet rs = ps.executeQuery();
+              
+     if(rs.next())
+     {
+
+         System.out.println("user checked in check user if 1");
+    	 ud=new VendorInfo(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getLong(5), rs.getString(6), rs.getString(7));
+    	 return ud;
+                         
+     }
+     else 
+    	 
+
+	/*}
+	catch (Exception e) 
+	  {
+    	// 	e.printStackTrace();
+    	 
+
+    	 
+    	 
+     }*/
+	
+	
+	return ud;
+	
+}
+
+
 
 }
 

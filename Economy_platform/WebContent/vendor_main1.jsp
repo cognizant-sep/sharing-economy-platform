@@ -1,17 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="v_model.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-
-
-
-
+     <%@ page import="v_model.*" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Vendor</title>
-
 <link rel="stylesheet" type="text/css" href="css_style.css"/>
 <link rel="stylesheet" type="text/css" href="vendor_css.css"/>
 
@@ -96,7 +88,7 @@ function G1()
 {
   		{
         typeOptionValue = document.getElementById("getFname").value;
-        if("Product" == nameSelect.value){
+        if("1" == nameSelect.value){
             document.getElementById("proDivCheck").style.display = "block";
         }
         else{  document.getElementById("proDivCheck").style.display = "none";
@@ -106,7 +98,7 @@ function G1()
          document.getElementById("serviceformDivCheck").style.display = "none";
          document.getElementById("service1formDivCheck").style.display = "none";
         }
-        if("Service" == nameSelect.value){
+        if("2" == nameSelect.value){
             document.getElementById("serDivCheck").style.display = "block";
         }
         else{  document.getElementById("serDivCheck").style.display = "none";
@@ -123,12 +115,12 @@ function form1SelectCheck(nameSelect1)
 {
   		{
         typeOptionValue = document.getElementById("product").value;
-        if("Beds" == nameSelect1.value || "Sofa and loungers" == nameSelect1.value|| "Chairs" == nameSelect1.value|| "Tables" == nameSelect1.value|| "Wardrobes" == nameSelect1.value||"add" == nameSelect1.value)
+        if("3" == nameSelect1.value || "4" == nameSelect1.value|| "5" == nameSelect1.value|| "6" == nameSelect1.value|| "7" == nameSelect1.value||"add" == nameSelect1.value)
         {
             document.getElementById("productformDivCheck").style.display = "block";
         }
         else{  document.getElementById("productformDivCheck").style.display = "none";}
-       if("Add other category..." == nameSelect1.value)
+       if("8" == nameSelect1.value)
         {
             document.getElementById("product1formDivCheck").style.display = "block";
         }
@@ -235,8 +227,7 @@ hr{
 /* String unm = request.getAttribute("username").toString();
 request.getSession().setAttribute("uname",unm);
  */
-Vendordetails userdetails=(Vendordetails)request.getAttribute("userdetails");
- 
+
 VendorInfo user=(VendorInfo)request.getAttribute("user");
 request.getSession().setAttribute("user", user);
 System.out.println("user checked");
@@ -244,7 +235,11 @@ System.out.println("user checked");
 %>
 
 
+
 <body>
+
+
+
 <div class="header">
 <img src="images/png1.png" class="logo"/>
 </div>
@@ -254,6 +249,8 @@ System.out.println("user checked");
   <a href="#">Departments</a>
   <a href="#">Top picks</a>
 </div>
+
+
 
 <div class="row">
   <div class="side">
@@ -267,24 +264,20 @@ System.out.println("user checked");
   </div>
 
 <div class="target">
-<strong><center>Welcome Vendor Id: <%=user.getVendor_UserId() %></center></strong><br><br>
 
+<strong><center>Welcome Vendor Id: <%=user.getVendor_UserId() %></center></strong><br><br>
 <!----------------------------------------------------------------------------------------------------------------------------------------------  -->
 
 
     <div id="eprd">
-       <form name="RegForm" action="Vendor_details.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
+       <form name="RegForm" action="Registration.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
     <div class="container">
     <br><br>
     <label for="Vendor_UserId">Vendor ID</label>
-    <input type="text" placeholder="Enter your ID" name="Vendor_Id" >
-
- <label for="Vendor_UserId">Vendor ID</label>
-    <input type="text" placeholder="Enter your ID" name="Vendor_UserId" value="<%=user.getVendor_UserId()%>">
-
+    <input type="text" placeholder="Enter your ID" name="Vendor_UserId"  >
 
     <label for="fname">First Name</label>
-    <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" value="<%=user.getfName() %>">
+    <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" value="<%=user.getfName() %>" >
 
     <label for="lname">Last Name</label>
     <input type="text" placeholder="Enter Last Name" name="lname" value="<%=user.getlName()%>">
@@ -336,30 +329,30 @@ System.out.println("user checked");
 <!---------------------------------------------------------------------------------------------------------------------------------------------------->
 
     <div id="upd">
-    <form name="RegForm" action="Vendor_details.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
+    <form name="RegForm" action="Registration.do"  method="post"  style="border:0px solid #ccc; opacity:2" ;>
     <div class="container">
      <br><br>
     <label for="Vendor_UserId">Vendor ID</label>
-    <input type="text" placeholder="Enter your ID" name="Vendor_UserId" value="<%=userdetails.getVendor_Id()%>">
+    <input type="text" placeholder="Enter your ID" name="Vendor_UserId" value="<%=user.getVendor_UserId() %>">
 
     <label for="fname">First Name</label>
-    <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" value="<%=user.getfName() %>">
+    <input type="text" placeholder="Enter First Name in Capital Letters" name="fname" >
 
     <label for="lname">Last Name</label>
-    <input type="text" placeholder="Enter Last Name" name="lname" value="<%=user.getlName()%>">
+    <input type="text" placeholder="Enter Last Name" name="lname" >
 
     <label for="age">Age</label>
-    <input type="text" placeholder="Enter Age" name="age" value="<%=user.getAge()%>" >
+    <input type="text" placeholder="Enter Age" name="age" >
 
     <label for="gender">Gender</label>
-    <select name="gender" placeholder="Gender" value="<%=user.getGender()%>">
+    <select name="gender" placeholder="Gender">
             <option label="Male">Male</option>
             <option label="Female">Female</option>
             <option label="Transgender">Others</option>
     </select>
 
     <label for="contactnumber">Contact Number</label>
-    <input type="text" placeholder="Enter Contact Number" name="contactNum" value="<%=user.getContactNo() %>">
+    <input type="text" placeholder="Enter Contact Number" name="contactNum" >
 
     <label for="contactnumber">Address</label>
     <input type="text" placeholder="Enter your address" name="Address" >
@@ -398,35 +391,31 @@ System.out.println("user checked");
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div id="apd">
-<form action="ProductFilter.do">
 <div class="container">
   <label for="">Choose what you offer:</label>
-  <select id="getFname" onchange="typeSelectCheck(this);" name="selecttype">
-  <option value="select_type" name="select_type">Select_Type</option>
-  <option value="Product" name="product">Product</option>
-  <option value="Service" name="service">Service</option>
+  <select id="getFname" onchange="typeSelectCheck(this);">
+  <option value="0">Select Type</option>
+  <option value="1">Product</option>
+  <option value="2">Service</option>
   </select>
 <div id="proDivCheck"  style="display:none;">
 <br>
 <label for="">Select Product Type:</label>
 <br>
-<select id="product" onchange="form1SelectCheck(this);" placeholder="Choose Product" name="choose_product">
-            <option name="product">Choose Product</option>
-            <option value="Beds">Beds</option>
-            <option value="Sofa and loungers">Sofa and loungers</option>
-            <option value="Chairs">Chairs</option>
-            <option value="Tables">Tables</option>
-            <option value="Wardrobes">Wardrobes</option>
-            <option value="Add other category...">Add other category...</option>
+<select id="product" onchange="form1SelectCheck(this);" placeholder="Choose Product">
+            <option>Choose Product</option>
+            <option value="3">Beds</option>
+            <option value="4">Sofa and loungers</option>
+            <option value="5">Chairs</option>
+            <option value="6">Tables</option>
+            <option value="7">Wardrobes</option>
+            <option value="8">Add other category...</option>
 </select>
 </div>
- <label for="Vendor_UserId">Vendor ID</label>
-    <input type="text" placeholder="Enter your ID" name="Vendor_UserId" value="<%=user.getVendor_UserId()%>">
-
 
 <div id="serDivCheck" style="display:none;" >
 <label for="">Select Service Type:</label>
-<select id="service" onchange="form2SelectCheck(this);" placeholder="Choose Services" name="services" name="choose_service">
+<select id="service" onchange="form2SelectCheck(this);" placeholder="Choose Services">
             <option >Choose Service</option>
             <option value="polish">Furniture Polishing/ Varnishing</option>
             <option value="assemble">Furniture Assembling </option>
@@ -489,13 +478,11 @@ System.out.println("user checked");
 </div>
 
 </div>
-</form>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------->
 
 
   <div id="epd">
-      <form>
       <div class="container">
   <label for="">Choose what you offer:</label>
   <select id="getFname" onchange="typeSelectCheck(this);">
@@ -509,12 +496,12 @@ System.out.println("user checked");
 <br>
 <select id="product" onchange="form1SelectCheck(this);" placeholder="Choose Product">
             <option>Choose Product</option>
-            <option value="Beds">Beds</option>
-            <option value="Sofa and loungers">Sofa and loungers</option>
-            <option value="Chair">Chairs</option>
-            <option value="Tables">Tables</option>
-            <option value="Wardrobes">Wardrobes</option>
-            <option value="Add other category..">Add other category...</option>
+            <option value="3">Beds</option>
+            <option value="4">Sofa and loungers</option>
+            <option value="5">Chairs</option>
+            <option value="6">Tables</option>
+            <option value="7">Wardrobes</option>
+            <option value="8">Add other category...</option>
 </select>
 </div>
 
@@ -577,7 +564,7 @@ System.out.println("user checked");
 <input type="text" placeholder="Enter the new category..." >
 <button value="ad" type="submit" class="signupbtn" onclick="form2SelectCheck(this);"><b>Add</b></button>
 </div>
-</form>
+
 </div>
 </div>
 

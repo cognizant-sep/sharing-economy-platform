@@ -15,9 +15,10 @@ public class Vendordetails {
 	String zipcode;
 	String landline;
 	String email;
+	String other;
 
-	public Vendordetails(String fName2, String lName2, int age2, long contactNo2, String gender2, String vendor_UserId,
-			String vendor_Id, String address, String city, String zipcode, String landline, String email) {
+	public Vendordetails(String fName2, String lName2, int age2, long contactNo2, String gender2, String vendor_UserId,String vendor_Id, String address, String city, String zipcode, String landline, String email,String other) 
+	{
 		super();
 		this.fName2 = fName2;
 		this.lName2 = lName2;
@@ -31,6 +32,7 @@ public class Vendordetails {
 		this.zipcode = zipcode;
 		this.landline = landline;
 		this.email = email;
+		this.other=other;
 	}
 	
 	public String getfName2() {
@@ -104,6 +106,14 @@ public class Vendordetails {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
 	}
 	
 }

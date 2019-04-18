@@ -55,9 +55,9 @@ request.getSession().setAttribute("uname",unm);
      <!--<a style="text-decoration: none;" href="" color="black" ><center> Old Vendor? Login here!</center></a>
       <button type="button" class="btn vendor" formtarget="_self" onclick=" location.href='vendor_login.html'">Existing Vendor?</button>
      <button type="button" class="btn vendor" onclick=" location.href='vendor_register.html'">New Vendor?</button>
-  </form>-->-->
+  </form>-->
  <div> <h2><font color="red">${param.msg1}</font></h2></div>
-  <h6>hi USER!!!</h6>
+  <h2>Hi USER!!!</h2>
   Welcome UserId: <Strong><h1><font color="Green"><%=unm %></font></h1></Strong>
     
 
