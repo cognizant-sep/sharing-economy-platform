@@ -11,7 +11,7 @@ create table product_details
                	brand VARCHAR2(20),
 		price Number(15) NOT NULL,
 		description varchar2(200) NOT NULL,
-		vendor_id number(10) REFERENCES vendor_details(vendor_id)
+		vendor_userid number(10) REFERENCES vendor_info1(vendor_userid)
 )
 
 create table vendor_details
