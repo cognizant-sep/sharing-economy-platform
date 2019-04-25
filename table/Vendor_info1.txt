@@ -9,3 +9,32 @@ create table vendor_info1
                 Password varchar2(15) NOT NULL             
 );
 	
+	
+	
+	
+	
+	create table product_details
+(
+		product_id  varchar2(10) primary key,
+		type1 varchar2(20) NOT NULL,
+                type2 varchar2(50) NOT NULL,
+		length number(10) ,
+		breadth number(10),
+		height number(10) ,
+                color varchar2(50),
+                material varchar2(5) ,
+               	brand VARCHAR2(20),
+		price Number(15) ,
+		description varchar2(200) ,
+		vendor_userid varchar2(10) REFERENCES vendor_info1(vendor_userid)
+)
+
+create table service_details
+(
+		product_id  varchar2(10) primary key,
+		type1 varchar2(20) NOT NULL,
+                type2 varchar2(50) NOT NULL,
+		price Number(15) ,
+		description varchar2(200) ,
+		vendor_userid varchar2(10) REFERENCES vendor_info1(vendor_userid)
+)
