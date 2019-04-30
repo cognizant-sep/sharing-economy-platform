@@ -34,11 +34,7 @@ create table vendor_details
 create table vendor_info1
 (
 	
-	      FName varchar2(50) NOT NULL,
-                LName varchar2(50) NOT NULL,
-                Age Number(2) NOT NULL,
-                Gender varchar2(10) NOT NULL,
-                ContactNum Number(10) NOT NULL,
+	   
                 Vendor_UserId varchar2(15)Primary key,
                 Password varchar2(15) NOT NULL
 	
@@ -54,3 +50,8 @@ create table user_info
  user_id varchar2(15)primary key,
  password varchar2(15)not null
 );
+Create table Category_Master
+(
+Category_name varchar2(20) Unique not null,
+Category_id number(15) not null Primary key,
+Type varchar2(10) not null);
